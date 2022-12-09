@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+void convertToUpper(char *a);
+int main(void) {
+    char string[] = "LearN c ProGramming";
+    printf("Before convertion %s\n", string);
+    convertToUpper(string);
+
+    printf("After conversion %s\n", string);
+
+
+    return 0;
+}
+void convertToUpper(char *a){
+while(*a!= 0) {
+    *a = toupper(*a);
+    ++a;
+}
+}
