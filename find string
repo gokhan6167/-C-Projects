@@ -1,0 +1,37 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+
+
+int main()
+{
+    char line1[3][80];
+    char search[80];
+    char *searchPtr;
+    int count = 0;
+
+    printf("Enter 3 line string: ");
+
+
+for(int c=0;c<3;c++){
+    gets(line1[c][0]);
+}
+
+    printf("Enter search string: ");
+    gets(search);
+
+    searchPtr = strstr( line1, search );
+    while(searchPtr != NULL )
+    {
+        count++;
+        searchPtr = strstr( searchPtr+1, search );
+    }
+
+
+
+    printf("%d occurrences of '%s' found in the text\n", count, search);
+    return 0;
+}
